@@ -7,6 +7,7 @@ COPTS = [
     "-Wextra",
     "-Werror",
     "-Wno-unknown-pragmas",
+    "-Wno-error=deprecated",
     "-Wunused",
     "-Wshadow",
 ]
