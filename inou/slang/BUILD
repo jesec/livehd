@@ -6,13 +6,8 @@ load("//tools:copt_default.bzl", "COPTS")
 
 cmake_external(
     name = "slang",
-    # cmake_options = ["-GNinja -DSLANG_INCLUDE_TESTS=OFF -DCMAKE_C_FLAGS=-fPIC -DCMAKE_CXX_FLAGS=-fPIC"],
-    cmake_options = ["-GNinja -DSLANG_INCLUDE_TESTS=OFF -DCMAKE_POSITION_INDEPENDENT_CODE=ON"],
+    cmake_options = ["-DSLANG_INCLUDE_TESTS=OFF -DCMAKE_POSITION_INDEPENDENT_CODE=ON"],
     lib_source = "@slang//:all",
-    make_commands = [
-        "ninja",  # libslangruntime.a libslangparser.a libslangcompiler.a libslangcore.a",
-        "ninja install",
-    ],
     # defines = [ "DEBUG" ],
     static_libraries = [
         "libslangruntime.a",
